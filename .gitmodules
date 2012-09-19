@@ -1,0 +1,3 @@
+[submodule "Assets/UnityCommon"]
+	path = Assets/UnityCommon
+	url = https://lostfictions@bitbucket.org/lostfictions/unitycommon.git

@@ -1,0 +1,40 @@
+
+# Unity directories
+
+Library/
+Temp/
+
+# User-generated directories
+
+[Bb]in/
+[Rr]elease/
+WorkingFiles/
+
+# Sublime/Ctags-generated
+
+*.sublime-workspace
+.tags
+.tags_sorted_by_file
+
+# MonoDevelop/Visual Studio-generated
+
+*.sln
+*.suo
+*.pidb
+*.pdb
+*.unityproj
+*.userprefs
+*.csproj
+*.booproj
+
+obj/
+_ReSharper*/
+
+# System-generated files
+
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Additional ignores
