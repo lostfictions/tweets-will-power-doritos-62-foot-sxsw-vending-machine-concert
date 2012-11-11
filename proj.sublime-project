@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": "Assets/Scripts",
+			"file_exclude_patterns": ["*.meta", "*.tags*", "*.git*"]
+		},
+		{
+			"path": "Assets/UnityCommon",
+			"file_exclude_patterns": ["*.meta", "*.tags*", "*.git*"]
+		}
+	]
+}
