@@ -50,31 +50,37 @@ public class TweetQueue : MonoBehaviour
 
 		ulong newId = lastTweetId;
 
-		IEnumerable<string> newTweets;
+		IEnumerable<string> newTweets = null;
 
 		//TODO: timeout, check for www errors
 		Waiters.DoUntil(_ => www.isDone, _ => {}, gameObject)
-			   .Then(()=> newTweets = JObject.Parse(www.text)["results"]
-														  .Where(obj => {
-														  					ulong id = obj["id"].ToObject<ulong>();
-														  					if(id > lastTweetId)
-														  					{
-														  						if(id > newId)
-														  							newId = id;
-														  						return true;
-														  				  	}
-														  				  	else
-														  				  		return false;
-														  				})
-														  .Select(obj => obj["text"].ToString()))
+			   .Then(()=> {
+			   				if(www.error != null)
+			   				{
+			   					Debug.LogWarning(name + ": " + www.error);
+			   					return;
+			   				}
+			   				newTweets = JObject.Parse(www.text)["results"]
+														  	   .Where(obj => {
+															  					ulong id = obj["id"].ToObject<ulong>();
+															  					if(id > lastTweetId)
+															  					{
+															  						if(id > newId)
+															  							newId = id;
+															  						return true;
+															  				  	}
+															  				  	else
+															  				  		return false;
+														  				     })
+														 	   .Select(obj => obj["text"].ToString());
+						  })
 			   .OnDestroy(() => {
-			   						if(newTweets.Count() > 0)
-			   						{
-				   						foreach(string t in newTweets.Reverse())
-				   							tweets.Enqueue(t);
-				   						lastTweetId = newId;
-				   					}
 			   						queryPending = false;
+			   						if(www.error != null || !www.isDone)
+			   							return;
+			   						foreach(string t in newTweets.Reverse())
+			   							tweets.Enqueue(t);
+			   						lastTweetId = newId;
 		   						});
 	}
 

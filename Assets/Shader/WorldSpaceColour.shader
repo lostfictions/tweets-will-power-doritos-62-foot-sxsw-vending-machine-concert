@@ -14,7 +14,7 @@ Shader "Custom/WorldSpaceColour"
 		};
 
 		void surf (Input IN, inout SurfaceOutput o) {
-			o.Albedo = fmod(abs(IN.worldPos - 0.5), 1.0);
+			o.Albedo = sin(IN.worldPos) * 0.4 + 0.6;
 		}
 		ENDCG
 	} 

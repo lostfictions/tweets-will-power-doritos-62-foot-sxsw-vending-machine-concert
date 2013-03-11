@@ -10,6 +10,10 @@ public class TextBark : MonoBehaviour
 	static Dictionary<char, GameObject> charMeshMap;
 	static TweetQueue tq;
 
+	static Transform letterParent;
+
+	public AudioClip[] barkSounds;
+
 	public float tracking = 0.35f;
 	public float charDelay = 0.35f;
 
@@ -17,11 +21,13 @@ public class TextBark : MonoBehaviour
 
 	float curCharDelay = 0;
 
-	Transform letterParent;
 
 	void Start()
 	{
-		letterParent = new GameObject("Letters").transform;
+		gameObject.AddComponent<AudioSource>();
+
+		if(letterParent == null)
+			letterParent = new GameObject("Letters").transform;
 
 		if(tq == null)
 		{
@@ -39,7 +45,7 @@ public class TextBark : MonoBehaviour
 
 		string dequeuedTweet = null;
 		Waiters.DoUntil(_ => dequeuedTweet != null, _ => dequeuedTweet = tq.Dequeue(), gameObject)
-			   .Then(() => { Debug.Log(dequeuedTweet); foreach(char c in dequeuedTweet) tweet.Enqueue(c); });
+			   .Then(() => { /* Debug.Log(dequeuedTweet); */ foreach(char c in dequeuedTweet) tweet.Enqueue(c); });
 	}
 
 	void Update()
@@ -62,6 +68,10 @@ public class TextBark : MonoBehaviour
 		GameObject go;
 		if(!charMeshMap.TryGetValue(c, out go) && !charMeshMap.TryGetValue(Char.ToUpper(c), out go))
 			return;
+
+		//TODO: hack to make the non-dog tweeter not bark
+		if(barkSounds.Length > 0)
+			audio.PlayOneShot(barkSounds.RandomInRange());
 
 		Quaternion rot = Quaternion.Euler(Mathy.Sin(25f, 1.3f, 0), Mathy.Sin(25f, 0.7f, 0.7f), Mathy.Sin(25f, 1.7f, 0.4f));
 		GameObject clone = (GameObject)Instantiate(go, transform.position, transform.rotation * rot);

@@ -32,7 +32,8 @@ public class LetterFloat : MonoBehaviour
 	{
 		Vector3 v = transform.position;
 		v.y += Mathf.Sin((Time.time - startTime) * (2f)) * 0.008f;
-		v.x -= Time.deltaTime * 1.6f;
+		v += transform.right * Time.deltaTime * 1.6f;
+		// v.x -= Time.deltaTime * 1.6f;
 		v.z += Mathf.Sin(Time.time - startTime + 0.3f) * 0.004f;
 
 		transform.position = v;
@@ -40,6 +41,13 @@ public class LetterFloat : MonoBehaviour
 	}
 
 	void OnTriggerEnter()
+	{
+		collider.isTrigger = false;
+		rigidbody.isKinematic = false;
+		Destroy(this);
+	}
+
+	void OnTriggerStay()
 	{
 		collider.isTrigger = false;
 		rigidbody.isKinematic = false;
