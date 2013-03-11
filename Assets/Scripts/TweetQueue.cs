@@ -11,6 +11,9 @@ using System.Linq;
 
 public class TweetQueue : MonoBehaviour
 {
+	public string[] chars;
+	public GameObject[] charMeshes;
+
 	public string queryUri = "http://search.twitter.com/search.json?q=doritos";
 	public float queryRefreshDelay = 30f;
 
@@ -27,7 +30,7 @@ public class TweetQueue : MonoBehaviour
 	{
 		if(tweets.Count > 0)
 			return tweets.Dequeue();
-		return "";
+		return null;
 	}
 
 	void Start()
@@ -49,7 +52,8 @@ public class TweetQueue : MonoBehaviour
 
 		IEnumerable<string> newTweets;
 
-		Waiters.DoUntil(_ => www.isDone, _ => {}, gameObject) //TODO: timeout on query, check for errors
+		//TODO: timeout, check for www errors
+		Waiters.DoUntil(_ => www.isDone, _ => {}, gameObject)
 			   .Then(()=> newTweets = JObject.Parse(www.text)["results"]
 														  .Where(obj => {
 														  					ulong id = obj["id"].ToObject<ulong>();
