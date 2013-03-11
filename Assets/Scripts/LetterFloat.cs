@@ -20,9 +20,9 @@ public class LetterFloat : MonoBehaviour
 
 	IEnumerator PopIn()
 	{
-		while(Time.time - startTime < 1.0f)
+		while(Time.time - startTime < 1.2f)
 		{
-			transform.localScale = Vector3.one * Easing.EaseOut(Time.time - startTime, EaseType.Elastic);
+			transform.localScale = Vector3.one * Easing.EaseOut((Time.time - startTime) / 1.2f, EaseType.Elastic);
 			yield return null;
 		}
 		transform.localScale = Vector3.one;
@@ -32,7 +32,7 @@ public class LetterFloat : MonoBehaviour
 	{
 		Vector3 v = transform.position;
 		v.y += Mathf.Sin((Time.time - startTime) * (2f)) * 0.008f;
-		v.x -= Time.deltaTime * 1f;
+		v.x -= Time.deltaTime * 1.6f;
 		v.z += Mathf.Sin(Time.time - startTime + 0.3f) * 0.004f;
 
 		transform.position = v;

@@ -17,6 +17,9 @@ public class TweetQueueEditor : Editor
 	readonly string generatedAssetDir = "AutoPrefabs";
 
 	bool foldout1 = false;
+
+	Material mat;
+
 	public override void OnInspectorGUI()
 	{
 		TweetQueue tq = (TweetQueue)target;
@@ -25,6 +28,9 @@ public class TweetQueueEditor : Editor
 
 		if(GUILayout.Button("Generate char\nprefabs and\npopulate lists", GUILayout.ExpandWidth(false)))
 			AutoPopulateLists();
+
+		mat = (Material)EditorGUILayout.ObjectField("Material", mat, typeof(Material), false);
+
 
 		foldout1 = EditorGUILayout.Foldout(foldout1, "Character map");
 		if(foldout1)
@@ -74,11 +80,16 @@ public class TweetQueueEditor : Editor
 		foreach(var go in assets.Where(a => a is GameObject && a.name.Length == 1))
 		{
 			var prefab = PrefabUtility.CreatePrefab(assetPath + "/" + generatedAssetDir + "/" + go.name + ".prefab", (GameObject)go);
+
 			var mc = prefab.AddComponent<MeshCollider>();
 			mc.convex = true;
 			mc.isTrigger = true;
+
 			var rb = prefab.AddComponent<Rigidbody>();
 			rb.isKinematic = true;
+
+			if(mat)
+				prefab.renderer.sharedMaterial = mat;
 		}
 
 		AssetDatabase.SaveAssets();

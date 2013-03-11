@@ -10,8 +10,8 @@ public class TextBark : MonoBehaviour
 	static Dictionary<char, GameObject> charMeshMap;
 	static TweetQueue tq;
 
-	public float tracking = 1.0f;
-	public float charDelay = 0.6f;
+	public float tracking = 0.35f;
+	public float charDelay = 0.35f;
 
 	Queue<char> tweet = new Queue<char>();
 

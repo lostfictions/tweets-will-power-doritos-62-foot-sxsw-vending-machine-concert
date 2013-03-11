@@ -68,9 +68,12 @@ public class TweetQueue : MonoBehaviour
 														  				})
 														  .Select(obj => obj["text"].ToString()))
 			   .OnDestroy(() => {
-			   						foreach(string t in newTweets.Reverse())
-			   							tweets.Enqueue(t);
-			   						lastTweetId = newId;
+			   						if(newTweets.Count() > 0)
+			   						{
+				   						foreach(string t in newTweets.Reverse())
+				   							tweets.Enqueue(t);
+				   						lastTweetId = newId;
+				   					}
 			   						queryPending = false;
 		   						});
 	}
