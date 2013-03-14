@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 3148d75f772a29142b6f8a52d184a0ea
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BoldStage
+    100004: Button1
+    100006: Button2
+    100008: Button3
+    100010: Button4
+    100012: Button5
+    100014: Button6
+    100016: CoinEject
+    100018: Coinslot
+    100020: Column
+    100022: Column_001
+    100024: Crossbar
+    100026: Glass
+    100028: Panel
+    100030: Platform
+    100032: Camera
+    100034: Lamp
+    400000: //RootNode
+    400002: BoldStage
+    400004: Button1
+    400006: Button2
+    400008: Button3
+    400010: Button4
+    400012: Button5
+    400014: Button6
+    400016: CoinEject
+    400018: Coinslot
+    400020: Column
+    400022: Column_001
+    400024: Crossbar
+    400026: Glass
+    400028: Panel
+    400030: Platform
+    400032: Camera
+    400034: Lamp
+    2300000: BoldStage
+    2300002: Button1
+    2300004: Button2
+    2300006: Button3
+    2300008: Button4
+    2300010: Button5
+    2300012: Button6
+    2300014: CoinEject
+    2300016: Coinslot
+    2300018: Column
+    2300020: Column_001
+    2300022: Crossbar
+    2300024: Glass
+    2300026: Panel
+    2300028: Platform
+    3300000: BoldStage
+    3300002: Button1
+    3300004: Button2
+    3300006: Button3
+    3300008: Button4
+    3300010: Button5
+    3300012: Button6
+    3300014: CoinEject
+    3300016: Coinslot
+    3300018: Column
+    3300020: Column_001
+    3300022: Crossbar
+    3300024: Glass
+    3300026: Panel
+    3300028: Platform
+    4300000: Panel
+    4300002: Coinslot
+    4300004: CoinEject
+    4300006: Button6
+    4300008: Button5
+    4300010: Button3
+    4300012: Button4
+    4300014: Button2
+    4300016: Button1
+    4300018: Column_001
+    4300020: Crossbar
+    4300022: Column
+    4300024: Glass
+    4300026: Platform
+    4300028: BoldStage
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 0
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 

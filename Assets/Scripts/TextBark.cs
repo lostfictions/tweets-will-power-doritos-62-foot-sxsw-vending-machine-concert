@@ -24,6 +24,11 @@ public class TextBark : MonoBehaviour
 	//TODO: events instead of waiters+polling
 	bool pendingDequeue = true;
 
+	public void ClearTweet()
+	{
+		tweet.Clear();
+	}
+
 	void Start()
 	{
 		gameObject.AddComponent<AudioSource>();

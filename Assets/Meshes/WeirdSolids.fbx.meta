@@ -1,0 +1,74 @@
+fileFormatVersion: 2
+guid: ae971e6358999d34587d1fbd6116533f
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Mball_003
+    100002: Pyramid
+    100004: Torus_Knot
+    100006: //RootNode
+    400000: Mball_003
+    400002: Pyramid
+    400004: Torus_Knot
+    400006: //RootNode
+    2300000: Mball_003
+    2300002: Pyramid
+    2300004: Torus_Knot
+    3300000: Mball_003
+    3300002: Pyramid
+    3300004: Torus_Knot
+    4300000: Mball_003
+    4300002: Torus_Knot
+    4300004: Pyramid
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 0
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 
