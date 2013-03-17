@@ -16,7 +16,7 @@ public class DogWander : MonoBehaviour
 	{
 		nma = GetComponent<NavMeshAgent>();
 
-		nma.SetDestination(new Vector3(Random.Range(-8.5f, 8.5f), 0, Random.Range(-8.5f, 8.5f)));
+		nma.SetDestination(new Vector3(Random.Range(-28f, 22f), 0, Random.Range(-38f, 38f)));
 		timeout = 15f;
 
 		// NavMeshHit hit;
